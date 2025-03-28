@@ -1,64 +1,95 @@
-**Week 5: Real-Time Communication with Socket.io**
+# Real-Time Collaborative Notes
 
-**Objective:**
+A real-time collaborative note-taking application built with the MERN stack and Socket.io.
 
-- Develop a real-time web application utilizing Socket.io.
-- Apply concepts of WebSockets, rooms, and namespaces.
-- Understand how to integrate real-time functionality into a full-stack MERN application.
+## Features
 
-**Project Suggestion:** Build a "Real-Time Collaborative Notes" application that allows multiple users to create, edit, and view notes in real time.
+- Real-time collaborative note editing
+- Room-based collaboration
+- User presence indicators
+- Instant notifications for user join/leave events
+- Persistent note storage
 
-**Instructions:**
+## Tech Stack
 
-1. **Project Setup:**
-   - Create a new project folder named `real-time-notes`.
-   - Set up a backend using Express.js and Socket.io.
-   - Initialize a frontend using React.
+- Frontend: React.js
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Real-time Communication: Socket.io
 
-2. **Application Features:**
-   - Users should be able to:
-     - Join a specific "room" to collaborate on a shared note.
-     - See real-time updates when another user edits the note.
-     - Create new notes and edit existing ones.
-     - Receive notifications when a new user joins or leaves a room.
+## Prerequisites
 
-3. **Backend Requirements:**
-   - Implement WebSocket connections using Socket.io.
-   - Create RESTful endpoints for saving and retrieving notes.
-   - Implement room-based communication for collaborative editing.
+- Node.js (v14 or higher)
+- MongoDB
+- npm or yarn
 
-4. **Frontend Requirements:**
-   - Implement a UI for creating, viewing, and editing notes.
-   - Allow users to join specific rooms via a unique URL or code.
-   - Display a list of online users in each room.
+## Installation
 
-5. **State Management:**
-   - Use React state and context API to manage application state.
-   - Handle incoming real-time data efficiently to update UI.
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd real-time-notes
+```
 
-6. **Testing:**
-   - Test real-time functionality by opening multiple browser tabs.
-   - Ensure messages and updates are reflected correctly across all clients.
+2. Install backend dependencies:
+```bash
+cd backend
+npm install
+```
 
-7. **Deployment:**
-   - Deploy the backend to a cloud service such as Render.
-   - Deploy the frontend to Vercel.
-   - Ensure proper environment variable setup for production.
+3. Install frontend dependencies:
+```bash
+cd ../frontend
+npm install
+```
 
-8. **Documentation:**
-   - Write a `README.md` file including:
-     - Project overview.
-     - Steps to install and run the project.
-     - Explanation of key real-time concepts used.
+4. Create a `.env` file in the backend directory with the following variables:
+```
+MONGODB_URI=your_mongodb_connection_string
+PORT=5000
+```
 
-9. **Submission:**
-   - Push your project to your GitHub repository.
+## Running the Application
 
-**Evaluation Criteria:**
+1. Start the backend server:
+```bash
+cd backend
+npm start
+```
 
-- Proper implementation of WebSocket communication.
-- Ability to join rooms and collaborate in real-time.
-- Clean UI and responsive design.
-- Structured and well-documented code.
-- Successful deployment and working application link.
+2. Start the frontend development server:
+```bash
+cd frontend
+npm start
+```
 
+The application will be available at `http://localhost:3000`
+
+## Real-Time Concepts Used
+
+- **WebSockets**: Implemented using Socket.io for real-time bidirectional communication
+- **Rooms**: Used for isolating note collaboration spaces
+- **Namespaces**: Implemented for organizing different types of real-time events
+- **Event Emitters**: Used for broadcasting updates to connected clients
+- **State Synchronization**: Real-time state updates across all connected clients
+
+## Testing
+
+1. Open multiple browser tabs
+2. Navigate to the same room URL in different tabs
+3. Edit notes in one tab and observe real-time updates in other tabs
+4. Test user presence indicators by joining/leaving rooms
+
+## Deployment
+
+The application is deployed on:
+- Backend: Render
+- Frontend: Vercel
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request 
